@@ -1,0 +1,11 @@
+<dx-button *ngIf="!disabled"
+    text="text"
+    [ngClass]="classname">
+    {{text}}
+</dx-button>
+
+<dx-button *ngIf="disabled"
+    text="text"
+    [ngClass]="classname" disabled>
+    {{text}}
+</dx-button>

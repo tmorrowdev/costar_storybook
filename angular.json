@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.material.blue.light.compact.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "devextreme"
 }
