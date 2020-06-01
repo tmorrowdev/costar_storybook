@@ -3,7 +3,7 @@
 
 .dx-button {
   font-family: Helvetica !important;
-  font-weight: bold !important;
+  font-weight:  !important;
   padding: 8px !important;
   width: auto !important;
   min-width: 0px !important;
@@ -50,5 +50,33 @@
   overflow: visible !important;
 }
 
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td[role="columnheader"] {
+  background: $light-gray !important;
+  height: 28px !important;
+  padding: 0px 5px 0px 10px !important;
+  color: $costar-blue !important;
+  font-weight:bold !important;
+  font-size:12px !important;
+  font-family: Helvetica, sans-serif !important;
+  border:none !important;
+}
+  .dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover{
+    color: $costar-dark-blue !important;
+  }
 
-
+  .dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td[role="gridcell"] {
+    padding: 0px 5px 0px 10px !important;
+    height: 28px !important;
+    font-size:12px !important;
+  font-family: Helvetica, sans-serif !important;
+  border:none !important;
+}
+path.dxb-bar-value {
+  fill: $costar-blue !important;
+}
+.dx-pager .dx-page-sizes .dx-selection, .dx-pager .dx-pages .dx-selection {
+  font-weight: bold !important;
+  font-size: 12px !important;
+  background-color: $costar-blue !important;
+  color: #fff;
+}

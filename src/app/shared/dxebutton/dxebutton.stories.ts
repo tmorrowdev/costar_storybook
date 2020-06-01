@@ -5,7 +5,7 @@ import { DxebuttonComponent } from './dxebutton.component';
 import { action } from '@storybook/addon-actions';
 import { DxButtonModule } from 'devextreme-angular';
 
-storiesOf('DxButton', module)
+storiesOf('DxeButton', module)
 .addDecorator(withKnobs)
 .addDecorator(
   moduleMetadata({
