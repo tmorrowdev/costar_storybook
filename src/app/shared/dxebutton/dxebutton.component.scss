@@ -37,13 +37,19 @@
       border: 2px solid $costar-alert !important;
       color: $costar-alert !important;
     }
+    &.disabled {
+      opacity: .5 !important;
+      border: 2px solid $medium-gray;
+      color: $medium-gray;
+
+    }
   }
   &.disabled {
     opacity: .5 !important;
   }
-  &.dx-button-content {
-    padding: 5px 0px 3px 0px!important;
-    overflow: visible;
-}
-}
 
+}
+.dx-button-content {
+  padding: 5px 0px 3px 0px!important;
+  overflow: visible;
+}
