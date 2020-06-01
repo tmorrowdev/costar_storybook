@@ -10,6 +10,9 @@ export class AppComponent implements OnInit {
 
   public title = 'devextreme';
   public text = 'Click this Button';
+  public color = 'costar';
+  public type = 'filled';
+  public disabled = false;
 
   public ngOnInit(){
     this.text = 'Click this Button';

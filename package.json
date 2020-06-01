@@ -20,7 +20,6 @@
     "@angular/forms": "~9.1.9",
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
-    "@angular/router": "~9.1.9",
     "devextreme": "20.1-stable",
     "devextreme-angular": "20.1-stable",
     "devextreme-schematics": "^1.2.0",
