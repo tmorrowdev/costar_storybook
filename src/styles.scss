@@ -4,7 +4,7 @@
 .dx-button {
   font-family: Helvetica !important;
   font-weight: bold !important;
-  padding: 8px 0px !important;
+  padding: 8px !important;
   width: auto !important;
   min-width: 0px !important;
 
@@ -39,4 +39,9 @@
       color: $costar-alert !important;
     }
   }
+  .dx-button-content{
+    padding: 0px !important;
+  }
 }
+
+
