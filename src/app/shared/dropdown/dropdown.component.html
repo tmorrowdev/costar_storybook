@@ -1,0 +1,18 @@
+<div class="dropdown-field">
+	<div class="dropdown-field-label" *ngIf="label.length > 0">{{label}}</div>
+	<div class="dropdown-field-value">
+		<dx-select-box 
+			[dataSource]="products"
+			[placeholder]="placeholder"
+			displayExpr="name"
+			searchMode="contains"
+			searchExpr="name"
+			searchTimeout="200"
+			minSearchLength1="1"
+			[searchEnabled]="true"
+			stylingMode="outlined"
+			[class.disabled]="disabled" 
+			[disabled]="disabled">
+		</dx-select-box>
+	</div>
+</div>

@@ -1,0 +1,69 @@
+<div class="list-page">
+	<div class="list-page-controls-wrapper">
+		<div class="controls-left">
+			<dx-button *ngIf="hasQueryChooser" class="secondary costar" [matMenuTriggerFor]="queryMenu">{{queryName}}</dx-button>
+			<mat-menu #queryMenu="matMenu">
+				<button mat-menu-item *ngFor="let query of queries" (click)="setQueryName(query)">{{query}}</button>		
+			</mat-menu>			
+			<!-- <mat-button-toggle-group name="ListMapToggle" class="list-map-button-toggle">
+				<mat-button-toggle value="list"><fa-icon icon="list"></fa-icon><span>List</span></mat-button-toggle>
+				<mat-button-toggle value="map"><fa-icon icon="map"></fa-icon><span>Map</span></mat-button-toggle>
+			</mat-button-toggle-group>   --> 
+		</div>
+		<div class="controls-right">
+			<!-- <portfolio-menu></portfolio-menu> -->
+			<dx-text-box *ngIf="hasSearch" #SearchBox placeholder="Search..." [showClearButton]="true" stylingMode="outlined" (keyup)="searchDataGrid($event.target.value)"></dx-text-box>	      			
+			<dx-button *ngIf="hasMoreMenu" class="secondary costar" [matMenuTriggerFor]="listMenu">More</dx-button>
+			<mat-menu  #listMenu="matMenu">
+				<button mat-menu-item *ngIf="hasQueryChooser">Save As...</button>        
+				<button mat-menu-item *ngIf="hasQueryChooser">Save</button>        
+				<button mat-menu-item *ngIf="hasQueryChooser">Share</button>      
+				<button mat-menu-item *ngIf="hasGrouping" (click)="toggleExpanded()"><span *ngIf="isExpanded">Collapse All</span><span *ngIf="!isExpanded">Expand All</span></button>      
+				<button mat-menu-item *ngIf="hasColumnChooser" (click)="showColumnChooser()">Column Chooser</button>        
+				<button mat-menu-item *ngIf="hasExport" (click)="exportDataGrid()">Export</button>   
+				<button mat-menu-item>
+					<mat-slide-toggle (click)="$event.stopPropagation()">Enable Caching</mat-slide-toggle>     
+				</button>
+				<button mat-menu-item *ngIf="archivedRecordToggle">
+					<mat-slide-toggle (click)="$event.stopPropagation()">Show Archived</mat-slide-toggle>     
+				</button>     
+			</mat-menu>
+			<dx-button *ngIf="hasAddButton" class="primary costar">Add</dx-button>			
+		</div>
+	</div>
+	<div class="list-page-data-grid-wrapper">
+		<dx-data-grid class="list-page-data-grid"
+			#ListPageDataGrid
+			[dataSource]="data"
+			[showColumnLines]="false"
+			[showRowLines]="false"
+			[showBorders]="true"
+			[rowAlternationEnabled]="true" 
+			[allowColumnResizing]="true"
+			[allowColumnReordering]="true"
+			[columnAutoWidth]="true"
+		>
+			<dxo-header-filter [visible]="true"></dxo-header-filter>    
+			<dxo-grouping #expand [autoExpandAll]="isExpanded" [contextMenuEnabled]="true"></dxo-grouping>
+			<dxo-scrolling mode="virtual"></dxo-scrolling>
+			<dxi-column dataField="id" alignment="left"></dxi-column>
+			<dxi-column dataField="ClientLeaseId" [visible]="false"></dxi-column>
+			<dxi-column dataField="PropertyName"></dxi-column>
+			<dxi-column dataField="Address1"></dxi-column>
+			<dxi-column dataField="City"></dxi-column>
+			<dxi-column dataField="State"></dxi-column>
+			<dxi-column dataField="ZipCode"></dxi-column>
+			<dxi-column dataField="LeaseCommencement" dataType="date" alignment="center"></dxi-column>
+			<dxi-column dataField="LeaseExpiration" dataType="date" alignment="center"></dxi-column>
+			<dxi-column dataField="RentableArea"dataType="number" alignment="right">
+				<dxo-format type="fixedPoint" [precision]="0"></dxo-format>
+			</dxi-column>
+			<dxi-column dataField="AccountType"></dxi-column>
+			<dxi-column dataField="TenantLegalName" [visible]="false"></dxi-column>
+			<dxi-column dataField="CurrentTerm" [visible]="false"></dxi-column>
+			<dxi-column dataField="LeaseStatus"></dxi-column>
+			<dxi-column dataField="LeaseType" [visible]="false"></dxi-column>
+			<dxi-column dataField="Currency" [visible]="false"></dxi-column>
+		</dx-data-grid>
+	</div>
+</div>

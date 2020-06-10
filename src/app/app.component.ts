@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   public color = 'costar';
   public type = 'filled';
   public disabled = false;
+  public icon = 'home';
 
   public ngOnInit(){
     this.text = 'Click this Button';

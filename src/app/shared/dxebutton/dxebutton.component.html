@@ -1,11 +1,12 @@
-<dx-button *ngIf="!disabled"
-    text="text"
-    [ngClass]="classname">
+<dx-button 
+    text="text"        
+    [ngClass]="classname" [class.disabled]="disabled" [disabled]="disabled" [icon]="icon">
+     <!-- <i *ngIf="hasIcon" class="material-icons">home</i>  -->    
     {{text}}
+    <!-- <span *ngIf="badge">i'm a badge</span> -->
 </dx-button>
 
-<dx-button *ngIf="disabled"
-    text="text"
-    [class]="['classname', 'disabled']" disabled>
-    {{text}}
-</dx-button>
+
+
+
+

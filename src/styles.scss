@@ -1,82 +1,400 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/styles/colors.scss';
+@import './assets/styles/var.scss';
 
-.dx-button {
-  font-family: Helvetica !important;
-  font-weight:  !important;
-  padding: 8px !important;
-  width: auto !important;
-  min-width: 0px !important;
+dx-button.dx-button {	
+	$costar-blue-hover: #4687cc;
 
-  &.filled {
-    &.costar {
-      background: $costar-blue !important;
-      color: white !important;
-    }
-    &.costarDark {
-      background: $costar-dark-blue !important;
-      color: white !important;
-    }
-    &.warn {
-      background: $costar-alert !important;
-      color: white !important;
-    }
-  }
-  &.outlined {
-    &.costar {
-      background: white !important;
-      border: 2px solid $costar-blue !important;
-      color: $costar-blue !important;
-    }
-    &.costarDark {
-      background: white !important;
-      border: 2px solid $costar-dark-blue !important;
-      color: $costar-dark-blue !important;
-    }
-    &.warn {
-      background: white !important;
-      border: 2px solid $costar-alert !important;
-      color: $costar-alert !important;
-    }
-  }
-  &.disabled {
-    opacity: .5 !important;
-  }
+	font-family: "Helvetica";
+	font-weight: normal;
+	padding: $std-padding;
+	border-radius: $std-border-radius;  
+	color: $white;
+	width: auto;
+	min-width: 0px;
+	box-shadow: none;
+	height: $std-padding * 4;
 
+	&.primary {
+		&.costar {
+			background: $costar-blue;
+			border: 1px solid $costar-blue;
+			&:hover {
+				background: $costar-blue-hover;
+				border-color: $costar-blue-hover;
+			}
+
+			&.disabled {
+				background: $gray;
+				border-color: $gray;
+				&:hover {
+					cursor: not-allowed;
+				}
+			}
+		}   
+		&.error {
+			background: $costar-alert;
+			border: 1px solid $costar-alert;
+		}
+	}
+	&.secondary {
+		&.costar {
+			background: white;
+			border: 1px solid $costar-blue;
+			color: $costar-blue;
+			&:hover {
+				color: $costar-blue-hover;
+				border-color: $costar-blue-hover;
+			}
+
+			&.disabled {
+				color: $costar-medium-blue;
+				border-color: $costar-medium-blue;
+				&:hover {
+					cursor: not-allowed;
+				}
+			}
+		}   
+		&.error {
+			background: white;
+			border: 1px solid $costar-alert;
+			color: $costar-alert;
+		}
+		&.disabled {
+			opacity: .5;
+			border: 1px solid $medium-gray;
+			color: $medium-gray;
+
+		}
+	}
+	&.tertiary {
+		background: $white;
+		border: $std-border;
+		color: $dark-gray;
+
+		&:hover {
+			border-color: #dadada;
+			color: #858585;
+		}
+
+		&.disabled {
+			border-color: $ultra-light-gray;
+			color: #858585;
+		}
+	}
+
+	div.dx-button-content {
+		padding: 0px;
+		height: 12px;
+		font-size: 14px;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 0.86;
+		letter-spacing: normal;
+		text-align: center;
+		overflow: visible;
+
+		mat-icon.mat-icon.material-icons {
+			height: 12px;
+			width: 12px;
+			font-size: 12px;
+
+		}
+	}
 }
 
-.dx-button-content {
-  padding: 5px 0px 3px 0px!important;
-  overflow: visible !important;
+app-badge {
+	div.badge {
+		height: 16px;
+		min-width: 16px;
+		border-radius: $std-padding;
+		border: $std-border;
+		padding: $std-padding / 4;
+		font-size: 12px;
+		text-align: center;
+		box-sizing: border-box;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		
+		&.primary {
+			color: white;
+			&.costar {
+				background: $costar-blue;				
+				border-color: $costar-blue;
+			}
+
+			&.error {
+				background: $costar-alert;				
+				border-color: $costar-alert;
+			}			
+		}
+
+		&.secondary {
+			background: white;
+			&.costar {
+				color: $costar-blue;
+				border-color: $costar-blue;
+			}
+
+			&.error {
+				color: $costar-alert;				
+				border-color: $costar-alert;
+			}
+		}
+		&.tertiary {
+			background: white;
+			&.costar {
+				color: $dark-gray;
+				border-color: $dark-gray;
+			}
+		}
+	}
 }
+
+app-chip {
+	div.chip {
+		height: 24px;
+		min-width: 16px;
+		border-radius: 14px;
+		border: $std-border;
+		padding: $std-padding / 2 $std-padding;
+		font-size: 14px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		text-align: center;
+		box-sizing: border-box;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		
+		&.primary {
+			color: white;
+			&.costar {
+				background: $costar-blue;				
+				border-color: $costar-blue;
+			}
+
+			&.error {
+				background: $costar-alert;				
+				border-color: $costar-alert;
+			}			
+		}
+
+		&.secondary {
+			background: white;
+			&.costar {
+				color: $costar-blue;
+				border-color: $costar-blue;
+			}
+
+			&.error {
+				color: $costar-alert;				
+				border-color: $costar-alert;
+			}
+		}
+		&.tertiary {
+			background: white;
+			&.costar {
+				color: $dark-gray;
+				border-color: $gray;
+			}
+		}
+	}
+}
+
+app-dropdown {
+	div.dropdown-field {
+		width: 252px;
+		font-family: Helvetica;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		color: $dark-gray;
+
+		div.dropdown-field-label {
+			margin-bottom: $std-padding / 2;			
+		}
+
+		div.dropdown-field-value {
+
+			dx-select-box {
+				height: $std-padding * 4;
+
+				
+
+				div.dx-dropdowneditor-input-wrapper {
+					&:focus {
+						outline: none;						
+					}
+
+					div.dx-texteditor-container {
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+app-list-page {
+	div.list-page {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;	
+
+		div.list-page-controls-wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: $std-padding;
+			font-size: 14px;		
+
+			&>div {
+				display: flex;
+				align-items: center;
+				z-index: 500;
+
+				&.controls-left {
+					mat-form-field.mat-form-field, dx-button {
+						margin-right: $dbl-padding;
+					}
+
+					h1, h2, h3, h4, h5, h6 {
+						margin: 0px;
+					}
+				}
+
+				&.controls-right {
+					dx-button, dx-text-box {
+						margin-left: $dbl-padding;
+					}						
+				}
+			}		
+
+			dx-button {
+				font-size: 14px;
+			}
+
+			mat-form-field {
+				&.mat-form-field {
+
+					&.mat-form-field-appearance-outline {
+						div.mat-form-field-wrapper {
+							padding: 0px;
+							margin: 0px;
+						}
+					}
+				}
+			}
+		}
+
+		div.list-page-data-grid-wrapper {
+			display: flex;
+			flex-grow: 1;
+			overflow-y:auto;
+			flex-direction: column;
+		}
+	}
+}
+
+dx-text-box {
+	height: $std-padding * 4;
+	width: 252px;
+}
+
+div.dx-placeholder {
+	font-size: 14px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	top: -5px;
+}
+
+.dx-texteditor.dx-editor-outlined {
+	border-radius: 2px;
+	box-shadow: none;
+	background: $white;
+	border: $std-border;
+
+	&.dx-state-focused {
+		box-shadow: none;
+	}
+}
+
+.dx-dropdowneditor-icon, .dx-dropdowneditor.dx-dropdowneditor-active .dx-dropdowneditor-icon {
+	color: $costar-blue;
+	font: 24px/20px DXIcons;
+}
+
+div.dx-item.dx-list-item {
+	&:hover {
+		background-color: $costar-light-blue;
+	}
+	&.dx-list-item-selected {
+		background-color: $costar-blue !important;
+		color: $white !important;
+	}
+}	
+
+div.dx-overlay-wrapper.dx-dropdowneditor-overlay.dx-dropdownlist-popup-wrapper.dx-selectbox-popup-wrapper {
+	box-shadow: 0 0 4px 0 $costar-blue;
+  	border-top: solid 1px $costar-blue;
+  	border-left: solid 1px $costar-blue;
+  	border-right: solid 1px $costar-blue;
+
+  	div.dx-overlay-content.dx-popup-normal {
+  		box-shadow: 0 0 4px 0 $costar-blue;
+		border-bottom: solid 1px $costar-blue;
+		border-left: solid 1px $costar-blue;
+		border-right: solid 1px $costar-blue;
+  	}
+}
+
 
 .dx-datagrid-headers .dx-datagrid-table .dx-row > td[role="columnheader"] {
-  background: $light-gray !important;
-  height: 28px !important;
-  padding: 0px 5px 0px 10px !important;
-  color: $costar-blue !important;
-  font-weight:bold !important;
-  font-size:12px !important;
-  font-family: Helvetica, sans-serif !important;
-  border:none !important;
+	background: $light-gray !important;
+	height: 28px !important;
+	padding: 0px 5px 0px 10px !important;
+	color: $costar-blue !important;
+	font-weight:bold !important;
+	font-size:12px !important;
+	font-family: Helvetica, sans-serif !important;
+	border:none !important;
 }
-  .dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover{
-    color: $costar-dark-blue !important;
-  }
+	.dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover{
+		color: $costar-dark-blue !important;
+	}
 
-  .dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td[role="gridcell"] {
-    padding: 0px 5px 0px 10px !important;
-    height: 28px !important;
-    font-size:12px !important;
-  font-family: Helvetica, sans-serif !important;
-  border:none !important;
+	.dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td[role="gridcell"] {
+		padding: 0px 5px 0px 10px !important;
+		height: 28px !important;
+		font-size:12px !important;
+	font-family: Helvetica, sans-serif !important;
+	border:none !important;
 }
 path.dxb-bar-value {
-  fill: $costar-blue !important;
+	fill: $costar-blue !important;
 }
 .dx-pager .dx-page-sizes .dx-selection, .dx-pager .dx-pages .dx-selection {
-  font-weight: bold !important;
-  font-size: 12px !important;
-  background-color: $costar-blue !important;
-  color: #fff;
+	font-weight: bold !important;
+	font-size: 12px !important;
+	background-color: $costar-blue !important;
+	color: #fff;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Helvetica"; }

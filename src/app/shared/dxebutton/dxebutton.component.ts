@@ -1,34 +1,44 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import classnames from 'classnames';
 
-type ButtonOptions = 'text' | 'filled' | 'outlined';
-type ColorOptions = 'costarDark' | 'costar' | 'warn';
+type TypeOptions = 'text' | 'primary' | 'secondary' | 'tertiary';
+type ColorOptions =  'costar' | 'error';
+type IconOptions = 'home';
 
 @Component({
-  selector: 'app-dxebutton',
-  templateUrl: './dxebutton.component.html',
-  styleUrls: ['./dxebutton.component.scss']
+	selector: 'app-dxebutton',
+	templateUrl: './dxebutton.component.html',
+	styleUrls: ['./dxebutton.component.scss']
 })
 export class DxebuttonComponent implements OnInit {
-  @Input()
-  public text = 'Click Me';
+	@Input()
+	public text = 'Button';
 
-  @Input()
-  public disabled = false;
+	@Input()
+	public hasIcon = false;
 
-  @Input()
-  public color: ColorOptions = 'costarDark';
+	@Input()
+	public disabled = false;
 
-  @Input()
-  public type: ButtonOptions = 'filled';
+	 @Input()
+	public badge = false;
 
-  get classname() {
-      return classnames(`${this.type}`, `${this.color}`);
-    }
+	@Input()
+	public color: ColorOptions = 'costar';
 
-  constructor() { }
+	@Input()
+	public type: TypeOptions = 'primary';
 
-  ngOnInit(): void {
-  }
+	@Input()
+	public icon: String = 'home';
+
+	get classname() {
+			return classnames(`${this.type}`, `${this.color}`);
+		}
+
+	constructor() { }
+
+	ngOnInit(): void {
+	}
 
 }
