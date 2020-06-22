@@ -1,40 +1,35 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import classnames from 'classnames';
 
-type TypeOptions = 'text' | 'primary' | 'secondary' | 'tertiary';
-type ColorOptions =  'costar' | 'error';
-type IconOptions = 'home';
+export type TypeOptions = 'text' | 'contained' | 'outlined' ;
+export type ColorOptions =  'costar-dark-blue' | 'costar' | 'error';
+export type IconOptions = '' | 'home' | 'activefolder'|	'airplane' | 'aligncenter' | 'alignjustify' | 'alignleft' | 'alignright' | 'arrowdown' | 'arrowleft' | 'arrowright' | 'arrowup' | 'background' | 'blockquote' | 'bold' | 'bookmark' | 'box' | 'bulletlist' | 'car' | 'card' | 'cart' | 'chart' | 'check' | 'chevrondoubleleft' | 'chevrondoubleright' | 'chevrondown' | 'chevronleft' | 'chevronright' | 'chevronup' | 'clear' | 'clearformat' | 'clearsquare' | 'clock' | 'close' | 'codeblock' | 'coffee' | 'collapse' | 'color' | 'columnchooser' | 'columnfield' | 'comment' | 'contains' | 'contentlayout' | 'copy' | 'cut' | 'datafield' | 'decreaseindent' | 'decreaselinespacing' | 'detailslayout' | 'docfile' | 'docxfile' | 'doesnotcontain' | 'download' | 'dragvertical' | 'edit' | 'endswith' | 'equal' | 'event' | 'expand' | 'export' | 'exportpdf' | 'exportselected' | 'exportxlsx' | 'favorites' | 'fieldchooser' | 'fields' | 'file' | 'fill' | 'filter' | 'floppy' | 'font' | 'fontsize' | 'food' | 'formula' | 'fullscreen' | 'gift' | 'globe' | 'greater' | 'greaterorequal' | 'group' | 'growfont' | 'header' | 'help' | 'hidepanel' | 'hierarchy' | 'image' | 'inactivefolder' | 'increaseindent' | 'increaselinespacing' | 'info' | 'isblank' | 'isnotblank' | 'italic' | 'key' | 'less' | 'lessorequal' | 'like' | 'link' | 'map' | 'mediumiconslayout' | 'mention' | 'menu' | 'message' | 'minus' | 'money' | 'more' | 'movetofolder' | 'music' | 'newfolder' | 'notequal' | 'orderedlist' | 'overflow' | 'palette' | 'parentfolder' | 'paste' | 'pdffile' | 'percent' | 'photo' | 'pin' | 'pinleft' | 'pinright' | 'plus' | 'pptfile' | 'pptxfile' | 'preferences' | 'print' | 'product' | 'pulldown' | 'range' | 'redo' | 'refresh' | 'rename' | 'repeat' | 'rowfield' | 'rtffile' | 'runner' | 'save' | 'search' | 'selectall' | 'share' | 'showpanel' | 'shrinkfont' | 'smalliconslayout' | 'sortdown' | 'sortdowntext' | 'sorted' | 'sortup' | 'sortuptext' | 'spindown' | 'spinleft' | 'spinright' | 'spinup' | 'square' | 'startswith' | 'strike' | 'subscript' | 'superscript' | 'tags' | 'tel' | 'tips' | 'toolbox' | 'trash' | 'txtfile' | 'underline' | 'undo' | 'unpin' | 'unselectall' | 'upload' | 'user' | 'variable' | 'video' | 'warning' | 'xlsfile' | 'xlsxfile';
 
 @Component({
-	selector: 'app-dxebutton',
-	templateUrl: './dxebutton.component.html',
-	styleUrls: ['./dxebutton.component.scss']
+	// tslint:disable-next-line: component-selector
+	selector: 'crem-button',
+  template:  `<dx-button [stylingMode]="type"
+  [text]="content"
+  [type]="color"
+  [disabled]="disabled"
+  [icon]="icon"></dx-button> `,
+	styleUrls: ['dxebutton.component.scss']
 })
 export class DxebuttonComponent implements OnInit {
 	@Input()
-	public text = 'Button';
+	public content : string;
 
 	@Input()
-	public hasIcon = false;
+	public disabled : boolean;
 
 	@Input()
-	public disabled = false;
-
-	 @Input()
-	public badge = false;
+	public color: ColorOptions;
 
 	@Input()
-	public color: ColorOptions = 'costar';
+	public type: TypeOptions;
 
 	@Input()
-	public type: TypeOptions = 'primary';
+	public icon: IconOptions;
 
-	@Input()
-	public icon: String = 'home';
-
-	get classname() {
-			return classnames(`${this.type}`, `${this.color}`);
-		}
 
 	constructor() { }
 
